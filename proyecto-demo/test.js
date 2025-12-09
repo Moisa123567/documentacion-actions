@@ -128,5 +128,26 @@ function test() {
         process.exit(0); // Salir exitosamente
     }
 }
+const { modulo } = require('./index');
+
+console.log('Test: modulo de 10 % 3 debe ser 1');
+if (modulo(10, 3) !== 1) {
+  throw new Error('Fallo: modulo(10, 3) no es 1');
+}
+
+console.log('Test: modulo lanza error si el divisor es 0');
+let errorLanzado = false;
+try {
+  modulo(10, 0);
+} catch (e) {
+  errorLanzado = true;
+}
+
+if (!errorLanzado) {
+  throw new Error('Fallo: modulo(10, 0) no lanzó error');
+}
+
+console.log('Todos los tests de modulo pasaron correctamente');
+
 
 test();
