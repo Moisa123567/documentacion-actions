@@ -25,10 +25,11 @@ console.log("➡️ Division(20, 4):", division(20, 4));
 
 function modulo(a, b) {
     if (b === 0) {
-        throw new Error("No se puede dividir entre cero");
+        throw new Error("No se puede dividir por cero");
     }
     return a % b;
 }
+
 
 module.exports = {
     suma,
